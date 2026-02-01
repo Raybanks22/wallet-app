@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wallet App</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #0f7b3a;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .app {
+      width: 100%;
+      max-width: 360px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 14px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      background: #0f7b3a;
+      color: white;
+      border: none;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- LOGIN -->
+    <div id="login">
+      <h2>Login</h2>
+      <input type="tel" placeholder="Mobile number" />
+      <input type="password" placeholder="4-digit PIN" maxlength="4" />
+      <button onclick="showOtp()">Continue</button>
+    </div>
+
+    <!-- OTP -->
+    <div id="otp" class="hidden">
+      <h2>Enter OTP</h2>
+      <input type="number" placeholder="OTP code" />
+      <button>Verify</button>
+    </div>
+
+  </div>
+
+  <script>
+    function showOtp() {
+      document.getElementById("login").classList.add("hidden");
+      document.getElementById("otp").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
